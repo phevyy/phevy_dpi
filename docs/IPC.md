@@ -37,6 +37,7 @@ Motor açılır açılmaz bir kez gönderilir.
 `admin` false ise `connect` her zaman `admin_required` ile biter. Uygulama bunu baştan gösterebilir.
 ```json
 {"type": "hello", "version": "0.2.0", "protocol": 1, "admin": true, "log_file": "C:\\...\\log.txt",
+ "default_domains": ["discord.com", "discord.gg", "..."],
  "strategies": [{"name": "none", "desc": "..."}, {"name": "fake-autottl", "desc": "..."}]}
 ```
 

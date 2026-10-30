@@ -13,6 +13,7 @@ import threading
 import time
 
 from . import config
+from .resolver import DEFAULT_DOMAINS
 from .service import Service
 from .strategies import STRATEGIES
 
@@ -87,7 +88,7 @@ def run(version):
 
     service = Service(emit)
     emit({"type": "hello", "version": version, "protocol": PROTOCOL_VERSION,
-          "admin": is_admin(), "log_file": config.LOG_FILE,
+          "admin": is_admin(), "log_file": config.LOG_FILE, "default_domains": DEFAULT_DOMAINS,
           "strategies": [{"name": s.name, "desc": s.desc} for s in STRATEGIES]})
     emit(service.snapshot())
     log.info("phevy motoru %s basladi", version)

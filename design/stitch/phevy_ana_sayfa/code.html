@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary": "#d0bcff", "on-tertiary-fixed": "#002113", "on-surface": "#dfe2ee", "error": "#ffb4ab", "tertiary": "#4edea3", "on-primary-fixed": "#23005c", "tertiary-fixed": "#6ffbbe", "surface-tint": "#d0bcff", "surface-container-high": "#262a33", "on-tertiary-fixed-variant": "#005236", "on-secondary-fixed-variant": "#004e5c", "secondary-container": "#03b5d3", "on-primary": "#3c0091", "on-secondary-container": "#00424e", "on-error": "#690005", "primary-fixed": "#e9ddff", "on-secondary-fixed": "#001f26", "secondary-fixed": "#acedff", "tertiary-fixed-dim": "#4edea3", "surface-variant": "#31353e", "surface-container-lowest": "#0a0e16", "on-background": "#dfe2ee", "primary-fixed-dim": "#d0bcff", "on-tertiary": "#003824", "surface-container-low": "#181c24", "surface-dim": "#0f131c", "secondary": "#4cd7f6", "surface": "#0f131c", "on-primary-fixed-variant": "#5516be", "inverse-on-surface": "#2c3039", "on-error-container": "#ffdad6", "primary-container": "#a078ff", "surface-container": "#1c2028", "on-tertiary-container": "#00311f", "on-secondary": "#003640", "tertiary-container": "#00a572", "surface-container-highest": "#31353e", "error-container": "#93000a", "surface-bright": "#353942", "outline": "#958ea0", "on-primary-container": "#340080", "on-surface-variant": "#cbc3d7", "inverse-surface": "#dfe2ee", "background": "#0f131c", "inverse-primary": "#6d3bd7", "secondary-fixed-dim": "#4cd7f6", "outline-variant": "#494454" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-lg": "1rem", "space-xl": "1.5rem", "gutter": "0.5rem", "margin": "0.75rem", "space-sm": "0.5rem", "space-md": "0.75rem", "space-xs": "0.25rem" }, fontFamily: { "headline-sm": ["Inter"], "label-md": ["Inter"], "label-sm": ["Inter"], "headline-lg": ["Inter"], "headline-md": ["Inter"], "data-mono-xs": ["JetBrains Mono"], "body-sm": ["Inter"], "data-mono": ["JetBrains Mono"], "body-md": ["Inter"] }, fontSize: { "headline-sm": ["15px", { lineHeight: "20px", letterSpacing: "-0.01em", fontWeight: "600" }], "label-md": ["11px", { lineHeight: "14px", letterSpacing: "0.04em", fontWeight: "600" }], "label-sm": ["10px", { lineHeight: "12px", letterSpacing: "0.02em", fontWeight: "500" }], "headline-lg": ["22px", { lineHeight: "28px", letterSpacing: "-0.02em", fontWeight: "700" }], "headline-md": ["18px", { lineHeight: "24px", letterSpacing: "-0.015em", fontWeight: "600" }], "data-mono-xs": ["10px", { lineHeight: "12px", letterSpacing: "0em", fontWeight: "400" }], "body-sm": ["12px", { lineHeight: "16px", letterSpacing: "0em", fontWeight: "400" }], "data-mono": ["12px", { lineHeight: "16px", letterSpacing: "-0.01em", fontWeight: "500" }], "body-md": ["13px", { lineHeight: "18px", letterSpacing: "0em", fontWeight: "400" }] } } } };</script><style>@layer base{html,body{width:100%;min-height:100%;margin:0;padding:0;background-color:#0f131c;color:#dfe2ee;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-thumb{background:#31353e;border-radius:4px;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.25)]"><div class="h-16 flex items-center justify-between px-margin"><div class="flex items-center gap-space-sm"><img alt="phevy App Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xs2U7L4DWCq2Q_YCT4dvXxnoyVk964O6XYGC_LP3Z16j6UxIbF5Uo8s5qr-_uYpL2uUO1gJy_FJ59uClpr_vkB0UeqgGEGsMsPPJ3g9WndVGdN5vYbX0-rcaUmqPLlTPuU5dUieVR6fhGvSCfuuXenxAilImhaN1IDZJ00x_rlt9Ac_hWzRpXuj7N7UuoPg4kdKHKPF6KFTmx7tTWPNk-ztLWBspzvwnxDbEASIcSm"/><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">phevy</span><span class="px-1.5 py-0.5 rounded-full bg-surface-container-high text-tertiary font-data-mono-xs text-data-mono-xs flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-tertiary inline-block animate-pulse"></span>v2.4</span></div><span class="font-label-sm text-label-sm text-on-surface-variant">Ana Sayfa</span></div></div><div class="flex items-center gap-space-xs"><div class="flex items-center bg-surface-container-low rounded-lg p-0.5"><button aria-label="Minimize" class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-colors rounded" type="button"><span class="font-data-mono-xs text-data-mono-xs font-bold leading-none">−</span></button><button aria-label="Maximize" class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-colors rounded" type="button"><span class="font-data-mono-xs text-data-mono-xs font-normal leading-none">□</span></button><button aria-label="Close" class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-white hover:bg-error-container transition-colors rounded" type="button"><span class="font-data-mono-xs text-data-mono-xs font-normal leading-none">×</span></button></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_0_10px_rgba(208,188,255,0.35)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-20 px-margin flex flex-col"><div class="flex flex-col w-full gap-space-md select-none">
+<!-- Interactive State Simulator Bar -->
+<div class="flex flex-col gap-space-xs bg-surface-container-low p-space-xs rounded-xl shadow-sm">
+<div class="flex items-center justify-between px-space-xs pt-0.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-primary">tune</span>
+        DURUM SİMÜLATÖRÜ
+      </span>
+<span class="font-data-mono-xs text-data-mono-xs text-tertiary">Canlı Önizleme</span>
+</div>
+<div class="grid grid-cols-4 gap-1 p-0.5 bg-surface-container-lowest rounded-lg">
+<button class="py-1 px-1.5 rounded text-center transition-all font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface" id="btn-state-disconnected" onclick="setVpnState('disconnected')" type="button">
+        Kapalı
+      </button>
+<button class="py-1 px-1.5 rounded text-center transition-all font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface" id="btn-state-scanning" onclick="setVpnState('scanning')" type="button">
+        Taranıyor…
+      </button>
+<button class="py-1 px-1.5 rounded text-center transition-all font-label-sm text-label-sm bg-tertiary-container text-on-tertiary shadow-sm font-semibold" id="btn-state-connected" onclick="setVpnState('connected')" type="button">
+        Bağlı
+      </button>
+<button class="py-1 px-1.5 rounded text-center transition-all font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface" id="btn-state-error" onclick="setVpnState('error')" type="button">
+        Hata
+      </button>
+</div>
+</div>
+<!-- Hero Power Switch Section -->
+<div class="relative flex flex-col items-center justify-center pt-space-xs pb-space-sm">
+<!-- Ambient Radial Aura -->
+<div class="absolute w-44 h-44 rounded-full bg-tertiary/15 blur-2xl transition-all duration-700 pointer-events-none" id="hero-aura"></div>
+<!-- Power Button Outer Frame -->
+<div class="relative flex items-center justify-center">
+<!-- Spinning / Pulsing Concentric Outer Ring -->
+<div class="absolute w-[164px] h-[164px] rounded-full transition-all duration-500 shadow-[0_0_24px_rgba(78,222,163,0.35)] bg-gradient-to-tr from-tertiary/20 via-tertiary to-tertiary/10 animate-pulse" id="hero-outer-ring"></div>
+<!-- Main Tactile Push Action Button -->
+<button aria-label="Bağlantı Anahtarı" class="relative w-[148px] h-[148px] rounded-full bg-surface-container-high transition-all duration-500 flex flex-col items-center justify-center group active:scale-95 shadow-xl overflow-hidden focus:outline-none" id="main-power-btn" onclick="toggleActiveState()" type="button">
+<!-- Inner Specular Sheen Gradient -->
+<div class="absolute inset-0 bg-gradient-to-b from-tertiary/20 via-surface-container to-surface-container-lowest opacity-90 transition-all duration-500" id="btn-interior-glow"></div>
+<!-- Central Glow Halo Badge -->
+<div class="relative z-10 w-20 h-20 rounded-full bg-tertiary/20 flex items-center justify-center transition-all duration-500 shadow-[0_0_20px_rgba(78,222,163,0.4)]" id="btn-icon-backdrop">
+<span class="material-symbols-outlined text-[42px] text-tertiary transition-all duration-300" id="btn-icon" style="font-variation-settings: 'FILL' 1;">power_settings_new</span>
+</div>
+<!-- Latency Micro Badge Under Icon -->
+<div class="relative z-10 mt-1 flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-sm shadow-sm transition-all duration-300" id="btn-status-badge">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-ping" id="badge-dot"></span>
+<span class="font-data-mono-xs text-data-mono-xs text-tertiary" id="badge-text">14 ms</span>
+</div>
+</button>
+</div>
+<!-- Dynamic Status Labels Block -->
+<div class="flex flex-col items-center text-center mt-space-md gap-1 min-h-[48px]">
+<div class="flex items-center gap-1.5">
+<h2 class="font-headline-md text-headline-md text-on-surface tracking-tight transition-all duration-300" id="status-title">
+          Bağlantı Aktif
+        </h2>
+<span class="w-2 h-2 rounded-full bg-tertiary transition-all duration-300" id="status-chip-dot"></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant transition-all duration-300" id="status-subtitle">
+        Tüm Windows TCP/UDP trafiği koruma altında
+      </p>
+</div>
+</div>
+<!-- Operational Method & Session Metadata Strip -->
+<div class="flex items-center justify-between bg-surface-container px-space-md py-space-sm rounded-xl shadow-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<div class="w-7 h-7 rounded-lg bg-primary-container/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[17px]">hub</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Metot</span>
+<span class="font-data-mono text-data-mono text-secondary truncate font-medium" id="active-method-label">fake-autottl</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pl-space-sm shrink-0">
+<div class="w-7 h-7 rounded-lg bg-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-[17px]">schedule</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Süre</span>
+<span class="font-data-mono text-data-mono text-on-surface" id="session-timer">00:12:45</span>
+</div>
+</div>
+</div>
+<!-- Telemetry Stat Trio Grid -->
+<div class="grid grid-cols-3 gap-space-xs">
+<!-- Stat 1: DNS -->
+<div class="flex flex-col bg-surface-container-low p-space-sm rounded-xl shadow-sm min-w-0">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">DNS</span>
+<span class="material-symbols-outlined text-secondary text-[15px]">security</span>
+</div>
+<span class="font-data-mono text-data-mono text-on-surface font-semibold truncate">1,428</span>
+<span class="font-data-mono-xs text-data-mono-xs text-on-surface-variant truncate mt-0.5">1.1.1.1 / DoH</span>
+</div>
+<!-- Stat 2: Sessions / Sockets -->
+<div class="flex flex-col bg-surface-container-low p-space-sm rounded-xl shadow-sm min-w-0">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Bağlantı</span>
+<span class="material-symbols-outlined text-primary text-[15px]">sensors</span>
+</div>
+<span class="font-data-mono text-data-mono text-on-surface font-semibold truncate">48 aktif</span>
+<span class="font-data-mono-xs text-data-mono-xs text-on-surface-variant truncate mt-0.5">Discord / Voice</span>
+</div>
+<!-- Stat 3: Audio & Voice Latency -->
+<div class="flex flex-col bg-surface-container-low p-space-sm rounded-xl shadow-sm min-w-0">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ses</span>
+<span class="material-symbols-outlined text-tertiary text-[15px]">graphic_eq</span>
+</div>
+<span class="font-data-mono text-data-mono text-tertiary font-semibold truncate">14 ms</span>
+<span class="font-data-mono-xs text-data-mono-xs text-on-surface-variant truncate mt-0.5">Jitter: &lt;1ms</span>
+</div>
+</div>
+<!-- Server Protocol & Target Row (Cyber Node Card) -->
+<div class="flex items-center justify-between bg-surface-container-low px-space-md py-space-sm rounded-xl shadow-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-body-sm shadow-inner shrink-0">
+        🇹🇷
+      </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">TR-Oto Seçim</span>
+<span class="px-1.5 py-0.2 rounded bg-secondary-container/20 text-secondary font-data-mono-xs text-data-mono-xs">Bypass</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">İstanbul Node #4 • Hızlı Yönlendirme</span>
+</div>
+</div>
+<button aria-label="Sunucu değiştir" class="p-1 rounded-lg hover:bg-surface-variant text-on-surface-variant transition-colors shrink-0" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+<!-- Action Deck -->
+<div class="flex flex-col gap-space-xs mt-space-xs">
+<button class="w-full py-2.5 px-space-md rounded-xl bg-surface-container hover:bg-surface-variant active:scale-[0.99] transition-all flex items-center justify-center gap-space-xs text-on-surface shadow-sm" id="btn-rescan" onclick="triggerRescan()" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary" id="rescan-icon">cached</span>
+<span class="font-headline-sm text-headline-sm text-secondary">Yeniden tara</span>
+</button>
+<!-- Footer System Status & Driver Telemetry -->
+<div class="flex items-center justify-center gap-1.5 pt-1 text-center">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary" id="driver-indicator-dot"></span>
+<span class="font-data-mono-xs text-data-mono-xs text-on-surface-variant" id="footer-note">
+        WinDivert 2.2 aktif • Trafik yönlendirilmiyor
+      </span>
+</div>
+</div>
+</div>
+<script>
+  let currentState = 'connected';
+  let timerInterval = null;
+  let secondsElapsed = 765; // 00:12:45
+
+  function formatTime(totalSec) {
+    const hrs = String(Math.floor(totalSec / 3600)).padStart(2, '0');
+    const mins = String(Math.floor((totalSec % 3600) / 60)).padStart(2, '0');
+    const secs = String(totalSec % 60).padStart(2, '0');
+    return `${hrs}:${mins}:${secs}`;
+  }
+
+  function startTimer() {
+    if (timerInterval) clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+      secondsElapsed++;
+      const el = document.getElementById('session-timer');
+      if (el) el.textContent = formatTime(secondsElapsed);
+    }, 1000);
+  }
+
+  function stopTimer() {
+    if (timerInterval) clearInterval(timerInterval);
+    const el = document.getElementById('session-timer');
+    if (el) el.textContent = '--:--:--';
+  }
+
+  function resetSimulatorButtons(activeState) {
+    const states = ['disconnected', 'scanning', 'connected', 'error'];
+    states.forEach(st => {
+      const btn = document.getElementById(`btn-state-${st}`);
+      if (!btn) return;
+      if (st === activeState) {
+        btn.className = 'py-1 px-1.5 rounded text-center transition-all font-label-sm text-label-sm bg-tertiary-container text-on-tertiary shadow-sm font-semibold';
+      } else {
+        btn.className = 'py-1 px-1.5 rounded text-center transition-all font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface';
+      }
+    });
+  }
+
+  function setVpnState(state) {
+    currentState = state;
+    resetSimulatorButtons(state);
+
+    const aura = document.getElementById('hero-aura');
+    const ring = document.getElementById('hero-outer-ring');
+    const iconBackdrop = document.getElementById('btn-icon-backdrop');
+    const icon = document.getElementById('btn-icon');
+    const badge = document.getElementById('btn-status-badge');
+    const badgeDot = document.getElementById('badge-dot');
+    const badgeText = document.getElementById('badge-text');
+    const title = document.getElementById('status-title');
+    const chipDot = document.getElementById('status-chip-dot');
+    const subtitle = document.getElementById('status-subtitle');
+    const methodLabel = document.getElementById('active-method-label');
+    const footerDot = document.getElementById('driver-indicator-dot');
+    const footerNote = document.getElementById('footer-note');
+
+    // Remove custom dynamic animation classes
+    ring.classList.remove('animate-spin', 'animate-pulse');
+
+    if (state === 'connected') {
+      aura.className = 'absolute w-44 h-44 rounded-full bg-tertiary/15 blur-2xl transition-all duration-700 pointer-events-none';
+      ring.className = 'absolute w-[164px] h-[164px] rounded-full transition-all duration-500 shadow-[0_0_24px_rgba(78,222,163,0.35)] bg-gradient-to-tr from-tertiary/20 via-tertiary to-tertiary/10 animate-pulse';
+      iconBackdrop.className = 'relative z-10 w-20 h-20 rounded-full bg-tertiary/20 flex items-center justify-center transition-all duration-500 shadow-[0_0_20px_rgba(78,222,163,0.4)]';
+      icon.className = 'material-symbols-outlined text-[42px] text-tertiary transition-all duration-300';
+      icon.textContent = 'power_settings_new';
+      badge.style.display = 'flex';
+      badgeDot.className = 'w-1.5 h-1.5 rounded-full bg-tertiary animate-ping';
+      badgeText.className = 'font-data-mono-xs text-data-mono-xs text-tertiary';
+      badgeText.textContent = '14 ms';
+      title.textContent = 'Bağlantı Aktif';
+      title.className = 'font-headline-md text-headline-md text-on-surface tracking-tight transition-all duration-300';
+      chipDot.className = 'w-2 h-2 rounded-full bg-tertiary transition-all duration-300';
+      subtitle.textContent = 'Tüm Windows TCP/UDP trafiği koruma altında';
+      methodLabel.textContent = 'fake-autottl';
+      methodLabel.className = 'font-data-mono text-data-mono text-secondary truncate font-medium';
+      footerDot.className = 'w-1.5 h-1.5 rounded-full bg-tertiary';
+      footerNote.textContent = 'WinDivert 2.2 aktif • Trafik yönlendirilmiyor';
+      startTimer();
+    } else if (state === 'scanning') {
+      aura.className = 'absolute w-44 h-44 rounded-full bg-secondary/15 blur-2xl transition-all duration-700 pointer-events-none';
+      ring.className = 'absolute w-[164px] h-[164px] rounded-full transition-all duration-500 shadow-[0_0_20px_rgba(76,215,246,0.3)] bg-gradient-to-tr from-primary via-secondary to-primary/20 animate-spin';
+      iconBackdrop.className = 'relative z-10 w-20 h-20 rounded-full bg-secondary/15 flex items-center justify-center transition-all duration-500';
+      icon.className = 'material-symbols-outlined text-[42px] text-secondary transition-all duration-300';
+      icon.textContent = 'sync';
+      badge.style.display = 'flex';
+      badgeDot.className = 'w-1.5 h-1.5 rounded-full bg-secondary animate-pulse';
+      badgeText.className = 'font-data-mono-xs text-data-mono-xs text-secondary';
+      badgeText.textContent = 'Taranıyor';
+      title.textContent = 'Protokoller Taranıyor…';
+      title.className = 'font-headline-md text-headline-md text-secondary tracking-tight transition-all duration-300';
+      chipDot.className = 'w-2 h-2 rounded-full bg-secondary animate-pulse';
+      subtitle.textContent = 'Deneniyor: fake-autottl bypass heuristiği…';
+      methodLabel.textContent = 'analiz ediliyor...';
+      methodLabel.className = 'font-data-mono text-data-mono text-on-surface-variant truncate font-medium';
+      footerDot.className = 'w-1.5 h-1.5 rounded-full bg-secondary animate-ping';
+      footerNote.textContent = 'WinDivert 2.2: Soket filtreleri doğrulanıyor';
+      stopTimer();
+    } else if (state === 'disconnected') {
+      aura.className = 'absolute w-44 h-44 rounded-full bg-surface-variant/20 blur-xl transition-all duration-700 pointer-events-none';
+      ring.className = 'absolute w-[164px] h-[164px] rounded-full transition-all duration-500 bg-surface-variant/40';
+      iconBackdrop.className = 'relative z-10 w-20 h-20 rounded-full bg-surface-variant/30 flex items-center justify-center transition-all duration-500';
+      icon.className = 'material-symbols-outlined text-[42px] text-on-surface-variant transition-all duration-300';
+      icon.textContent = 'power_settings_new';
+      badge.style.display = 'none';
+      title.textContent = 'Bağlantı Kesildi';
+      title.className = 'font-headline-md text-headline-md text-on-surface-variant tracking-tight transition-all duration-300';
+      chipDot.className = 'w-2 h-2 rounded-full bg-on-surface-variant transition-all duration-300';
+      subtitle.textContent = 'Güvenlik filtreleri pasif durumda';
+      methodLabel.textContent = 'Beklemede';
+      methodLabel.className = 'font-data-mono text-data-mono text-on-surface-variant truncate font-medium';
+      footerDot.className = 'w-1.5 h-1.5 rounded-full bg-on-surface-variant';
+      footerNote.textContent = 'WinDivert 2.2 rölantide • Hazır';
+      stopTimer();
+    } else if (state === 'error') {
+      aura.className = 'absolute w-44 h-44 rounded-full bg-error/20 blur-2xl transition-all duration-700 pointer-events-none';
+      ring.className = 'absolute w-[164px] h-[164px] rounded-full transition-all duration-500 shadow-[0_0_24px_rgba(255,180,171,0.4)] bg-gradient-to-tr from-error/30 via-error to-error/10 animate-pulse';
+      iconBackdrop.className = 'relative z-10 w-20 h-20 rounded-full bg-error-container/40 flex items-center justify-center transition-all duration-500 shadow-[0_0_15px_rgba(255,180,171,0.3)]';
+      icon.className = 'material-symbols-outlined text-[42px] text-error transition-all duration-300';
+      icon.textContent = 'error';
+      badge.style.display = 'flex';
+      badgeDot.className = 'w-1.5 h-1.5 rounded-full bg-error';
+      badgeText.className = 'font-data-mono-xs text-data-mono-xs text-error';
+      badgeText.textContent = '0x80070005';
+      title.textContent = 'Bağlantı Hatası';
+      title.className = 'font-headline-md text-headline-md text-error tracking-tight transition-all duration-300';
+      chipDot.className = 'w-2 h-2 rounded-full bg-error transition-all duration-300';
+      subtitle.textContent = 'Sürücü başlatılamadı (Hata: 0x80070005)';
+      methodLabel.textContent = 'Hata';
+      methodLabel.className = 'font-data-mono text-data-mono text-error truncate font-medium';
+      footerDot.className = 'w-1.5 h-1.5 rounded-full bg-error';
+      footerNote.textContent = 'Erişim engellendi: Yönetici izinleri gerekebilir';
+      stopTimer();
+    }
+  }
+
+  function toggleActiveState() {
+    if (currentState === 'connected') {
+      setVpnState('disconnected');
+    } else {
+      setVpnState('scanning');
+      setTimeout(() => {
+        setVpnState('connected');
+      }, 1400);
+    }
+  }
+
+  function triggerRescan() {
+    const icon = document.getElementById('rescan-icon');
+    if (icon) icon.classList.add('animate-spin');
+    setVpnState('scanning');
+    setTimeout(() => {
+      if (icon) icon.classList.remove('animate-spin');
+      setVpnState('connected');
+    }, 1800);
+  }
+
+  // Initialize active timer
+  startTimer();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-1px_12px_rgba(0,0,0,0.3)]" data-active-classes="text-primary font-bold"><div class="h-16 flex items-center justify-around px-margin"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-0.5 transition-colors text-primary font-bold" data-path="ana-sayfa" href="#"><span class="material-symbols-outlined text-[22px]">home</span><span class="font-label-sm text-label-sm">Ana Sayfa</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="loglar" href="#"><span class="material-symbols-outlined text-[22px]">terminal</span><span class="font-label-sm text-label-sm">Loglar</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="ayarlar" href="#"><span class="material-symbols-outlined text-[22px]">settings</span><span class="font-label-sm text-label-sm">Ayarlar</span></a></div></nav></body></html>
