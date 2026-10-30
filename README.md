@@ -94,6 +94,12 @@ docs/IPC.md     Uygulama <-> motor protokolü
 design/         Stitch arayüz tasarımları
 ```
 
+### Lisans
+
+[GPL-3.0](LICENSE). Kodu kullanabilir ve değiştirebilirsiniz; dağıttığınız sürümlerin kaynak kodunu da
+GPL-3.0 ile açık paylaşmanız gerekir. Yazılım hiçbir garanti olmadan, olduğu gibi sunulur.
+Üçüncü taraf bileşenler ve lisansları: [installer/THIRD_PARTY.txt](installer/THIRD_PARTY.txt).
+
 ---
 
 ## English
@@ -182,4 +188,8 @@ docs/IPC.md     App <-> engine protocol (Turkish)
 design/         Stitch UI designs
 ```
 
+### License
+
+[GPL-3.0](LICENSE). You may use and modify the code; versions you distribute must also be released as
+source under GPL-3.0. The software is provided as is, without any warranty.
 Third-party components and licenses: [installer/THIRD_PARTY.txt](installer/THIRD_PARTY.txt).
