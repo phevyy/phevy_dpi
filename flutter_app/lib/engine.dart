@@ -86,7 +86,7 @@ class EngineClient extends ChangeNotifier {
   Future<void> start() async {
     final path = findEngine();
     if (path == null) {
-      _localError('engine_missing', 'phevy_engine.exe bulunamadi');
+      _localError('engine_missing', 'phevy_engine.exe bulunamadı');
       return;
     }
     try {
@@ -106,8 +106,8 @@ class EngineClient extends ChangeNotifier {
   void _onExit(int code) {
     _proc = null;
     if (_shuttingDown) return;
-    _addLog(LogEntry(DateTime.now(), 'ERROR', 'phevy.app', 'Motor beklenmedik sekilde kapandi (kod $code)'));
-    _localError('engine_exited', 'Motor kapandi (kod $code)');
+    _addLog(LogEntry(DateTime.now(), 'ERROR', 'phevy.app', 'Motor beklenmedik şekilde kapandı (kod $code)'));
+    _localError('engine_exited', 'Motor kapandı (kod $code)');
   }
 
   void _localError(String c, String m) {

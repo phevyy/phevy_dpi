@@ -28,23 +28,23 @@ class Strategy:
 
 
 STRATEGIES = [
-    Strategy("none", "Hicbir sey yapma (DPI yok)"),
-    Strategy("split", "ClientHello'yu SNI ortasindan bol", split=("sni",)),
-    Strategy("multisplit", "1. bayttan ve SNI ortasindan bol", split=("1", "sni")),
-    Strategy("disorder", "SNI'dan bol, parcalari ters gonder", split=("sni",), disorder=True),
-    Strategy("multidisorder", "1 + SNI'dan bol, ters gonder", split=("1", "sni"), disorder=True),
-    Strategy("fake-badseq", "Sahte hello (yanlis SEQ) + bol", split=("sni",), fake="badseq"),
-    Strategy("fake-badsum", "Sahte hello (bozuk checksum) + bol", split=("sni",), fake="badsum"),
-    Strategy("fake-badseq-disorder", "Sahte hello (yanlis SEQ) + ters bol", split=("1", "sni"),
+    Strategy("none", "Hiçbir şey yapma (DPI yok)"),
+    Strategy("split", "ClientHello'yu SNI ortasından böl", split=("sni",)),
+    Strategy("multisplit", "1. bayttan ve SNI ortasından böl", split=("1", "sni")),
+    Strategy("disorder", "SNI'dan böl, parçaları ters gönder", split=("sni",), disorder=True),
+    Strategy("multidisorder", "1 + SNI'dan böl, ters gönder", split=("1", "sni"), disorder=True),
+    Strategy("fake-badseq", "Sahte hello (yanlış SEQ) + böl", split=("sni",), fake="badseq"),
+    Strategy("fake-badsum", "Sahte hello (bozuk checksum) + böl", split=("sni",), fake="badsum"),
+    Strategy("fake-badseq-disorder", "Sahte hello (yanlış SEQ) + ters böl", split=("1", "sni"),
              disorder=True, fake="badseq"),
-    Strategy("fake-badsum-disorder", "Sahte hello (bozuk checksum) + ters bol", split=("1", "sni"),
+    Strategy("fake-badsum-disorder", "Sahte hello (bozuk checksum) + ters böl", split=("1", "sni"),
              disorder=True, fake="badsum"),
-    Strategy("fake-autottl", "Sahte hello (otomatik TTL) + bol", split=("sni",), fake="autottl"),
-    Strategy("fake-autottl-disorder", "Sahte hello (otomatik TTL) + ters bol", split=("1", "sni"),
+    Strategy("fake-autottl", "Sahte hello (otomatik TTL) + böl", split=("sni",), fake="autottl"),
+    Strategy("fake-autottl-disorder", "Sahte hello (otomatik TTL) + ters böl", split=("1", "sni"),
              disorder=True, fake="autottl"),
-    Strategy("fake-ttl4","Sahte hello (TTL=4) + bol", split=("sni",), fake="ttl", fake_ttl=4),
-    Strategy("fake-ttl6", "Sahte hello (TTL=6) + bol", split=("sni",), fake="ttl", fake_ttl=6),
-    Strategy("fake-ttl8", "Sahte hello (TTL=8) + bol", split=("sni",), fake="ttl", fake_ttl=8),
+    Strategy("fake-ttl4","Sahte hello (TTL=4) + böl", split=("sni",), fake="ttl", fake_ttl=4),
+    Strategy("fake-ttl6", "Sahte hello (TTL=6) + böl", split=("sni",), fake="ttl", fake_ttl=6),
+    Strategy("fake-ttl8", "Sahte hello (TTL=8) + böl", split=("sni",), fake="ttl", fake_ttl=8),
 ]
 
 BY_NAME = {s.name: s for s in STRATEGIES}

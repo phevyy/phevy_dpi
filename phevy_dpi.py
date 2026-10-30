@@ -41,10 +41,10 @@ def run_console(args):
     def emit(ev):
         if ev["type"] == "state":
             if ev["state"] == "connected":
-                print(f"\nHazir. Yontem: {ev['strategy']}. Discord'u (yeniden) baslatabilirsin.")
+                print(f"\nHazır. Yöntem: {ev['strategy']}. Discord'u (yeniden) başlatabilirsin.")
                 if ev["message"]:
                     print(f"! {ev['message']}")
-                print("Bu pencere acik kaldigi surece calisir. Kapatmak icin Ctrl+C.")
+                print("Bu pencere açık kaldığı sürece çalışır. Kapatmak için Ctrl+C.")
             elif ev["state"] == "error":
                 print(f"HATA: {ev['message']}")
                 done.set()
@@ -60,7 +60,7 @@ def run_console(args):
     try:
         while not done.wait(1):
             pass
-        input("Cikmak icin Enter...")
+        input("Çıkmak için Enter...")
     except KeyboardInterrupt:
         pass
     service.close()
@@ -69,11 +69,11 @@ def run_console(args):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Discord icin DPI atlatma araci")
-    ap.add_argument("--scan", action="store_true", help="kayitli yontemi yok say, bastan tara")
-    ap.add_argument("--strategy", choices=list(BY_NAME), help="tarama yapmadan bu yontemi kullan")
-    ap.add_argument("--no-voice-fix", action="store_true", help="ses (UDP) duzeltmesini kapat")
-    ap.add_argument("--list", action="store_true", help="yontemleri listele")
+    ap = argparse.ArgumentParser(description="Discord için DPI atlatma aracı")
+    ap.add_argument("--scan", action="store_true", help="kayıtlı yöntemi yok say, baştan tara")
+    ap.add_argument("--strategy", choices=list(BY_NAME), help="tarama yapmadan bu yöntemi kullan")
+    ap.add_argument("--no-voice-fix", action="store_true", help="ses (UDP) düzeltmesini kapat")
+    ap.add_argument("--list", action="store_true", help="yöntemleri listele")
     ap.add_argument("--ipc", action="store_true", help="uygulama modu (stdin/stdout JSON)")
     ap.add_argument("-v", "--verbose", action="store_true")
     args = ap.parse_args()
@@ -89,7 +89,7 @@ def main():
         return 0
 
     if not is_admin():
-        print("Yonetici izni gerekiyor, yeniden baslatiliyor...")
+        print("Yönetici izni gerekiyor, yeniden başlatılıyor...")
         relaunch_as_admin()
         return 0
     return run_console(args)

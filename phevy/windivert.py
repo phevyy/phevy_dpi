@@ -12,14 +12,14 @@ ERROR_NO_DATA = 232
 ERROR_OPERATION_ABORTED = 995
 
 _ERRORS = {
-    2: "WinDivert64.sys bulunamadi (dll ile ayni klasorde olmali)",
-    5: "Yonetici izni gerekli",
-    87: "Gecersiz filtre/parametre",
-    577: "Surucu imzasi dogrulanamadi",
-    654: "Baska surumde bir WinDivert surucusu zaten yuklu (GoodbyeDPI/zapret acik mi?)",
-    1060: "WinDivert servisi bulunamadi",
-    1275: "Surucu engellendi (antivirus/Defender veya Secure Boot politikasi)",
-    1753: "Base Filtering Engine servisi calismiyor",
+    2: "WinDivert64.sys bulunamadı (dll ile aynı klasörde olmalı)",
+    5: "Yönetici izni gerekli",
+    87: "Geçersiz filtre/parametre",
+    577: "Sürücü imzası doğrulanamadı",
+    654: "Başka sürümde bir WinDivert sürücüsü zaten yüklü (GoodbyeDPI/zapret açık mı?)",
+    1060: "WinDivert servisi bulunamadı",
+    1275: "Sürücü engellendi (antivirüs/Defender veya Secure Boot politikası)",
+    1753: "Base Filtering Engine servisi çalışmıyor",
 }
 
 
@@ -80,7 +80,7 @@ def _find_dll():
         p = os.path.abspath(os.path.join(r, "WinDivert.dll"))
         if os.path.isfile(p):
             return p
-    raise WinDivertError("WinDivert.dll bulunamadi. third_party klasorune koyun.", "driver_missing")
+    raise WinDivertError("WinDivert.dll bulunamadı. third_party klasörüne koyun.", "driver_missing")
 
 
 _dll = None
@@ -135,7 +135,7 @@ class Handle:
         h = lib.WinDivertOpen(filt.encode(), LAYER_NETWORK, priority, flags)
         if h is None or h == ctypes.c_void_p(-1).value:
             code = ctypes.get_last_error()
-            raise WinDivertError(f"WinDivertOpen basarisiz ({code}): {_ERRORS.get(code, ctypes.FormatError(code))}",
+            raise WinDivertError(f"WinDivertOpen başarısız ({code}): {_ERRORS.get(code, ctypes.FormatError(code))}",
                                  _CODES.get(code, "driver_error"))
         self._h = h
         self._buf = (ctypes.c_char * MAX_PACKET)()
@@ -149,7 +149,7 @@ class Handle:
             code = ctypes.get_last_error()
             if self._closed or code in (ERROR_NO_DATA, ERROR_OPERATION_ABORTED):
                 return None
-            raise WinDivertError(f"WinDivertRecv basarisiz ({code})")
+            raise WinDivertError(f"WinDivertRecv başarısız ({code})")
         return bytearray(self._buf.raw[:n.value]), addr
 
     def send(self, buf, addr, recalc=True):

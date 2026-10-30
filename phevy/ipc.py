@@ -91,7 +91,7 @@ def run(version):
           "admin": is_admin(), "log_file": config.LOG_FILE, "default_domains": DEFAULT_DOMAINS,
           "strategies": [{"name": s.name, "desc": s.desc} for s in STRATEGIES]})
     emit(service.snapshot())
-    log.info("phevy motoru %s basladi", version)
+    log.info("phevy motoru %s başladı", version)
 
     for line in inp:
         line = line.strip()
@@ -102,7 +102,7 @@ def run(version):
             cmd = msg.pop("cmd")
             req_id = msg.pop("id", None)
         except (ValueError, KeyError, AttributeError):
-            emit({"type": "result", "id": None, "ok": False, "error": "Gecersiz komut"})
+            emit({"type": "result", "id": None, "ok": False, "error": "Geçersiz komut"})
             continue
         ok, error = True, None
         if cmd in SERVICE_COMMANDS:
@@ -116,7 +116,7 @@ def run(version):
         elif cmd == "set_log_level":
             level = LEVELS.get(str(msg.get("level", "")).upper())
             if level is None:
-                ok, error = False, "Gecersiz seviye"
+                ok, error = False, "Geçersiz seviye"
             else:
                 handler.setLevel(level)
         elif cmd == "quit":
@@ -126,7 +126,7 @@ def run(version):
         emit({"type": "result", "id": req_id, "cmd": cmd, "ok": ok, "error": error})
 
     # stdin kapandi (uygulama kapandi/coktu) ya da quit: suruculeri birakip cik.
-    log.info("Motor kapaniyor")
+    log.info("Motor kapanıyor")
     service.close()
     time.sleep(0.1)
     return 0

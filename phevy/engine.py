@@ -52,7 +52,7 @@ class Engine:
         for f in (FILTER_DNS, FILTER_TCP, FILTER_UDP, FILTER_SYNACK):
             err = wd.check_filter(f)
             if err:
-                raise wd.WinDivertError(f"Filtre hatasi: {err} -> {f}")
+                raise wd.WinDivertError(f"Filtre hatası: {err} -> {f}")
 
     def set_strategy(self, strategy):
         self.strategy = strategy
@@ -90,7 +90,7 @@ class Engine:
                 loop(h, buf, addr)
             except Exception:
                 # Bir pakette hata olursa paketi oldugu gibi gecir, baglanti kopmasin.
-                log.exception("Paket islenemedi, oldugu gibi gonderiliyor")
+                log.exception("Paket işlenemedi, olduğu gibi gönderiliyor")
                 if not sniff:
                     h.send(buf, addr)
 
@@ -190,7 +190,7 @@ class Engine:
             # Ses baglantisinin ilk paketinden once rastgele cop paketler: DPI akisi taniyamaz,
             # Discord ses sunucusu gecersiz paketleri yok sayar.
             self.stats["voice"] += 1
-            log.debug("Ses baglantisi -> %s:%d", pkt.dst_ip, pkt.dport)
+            log.debug("Ses bağlantısı -> %s:%d", pkt.dst_ip, pkt.dport)
             for _ in range(UDP_FAKE_COUNT):
                 junk = pkt.with_payload(os.urandom(64))
                 h.send(junk.buf, addr.copy())

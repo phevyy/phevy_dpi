@@ -71,5 +71,5 @@ class Resolver:
                     self.target_ips.update(ips)
             log.debug("DoH %s -> %s", name, ips)
             return ips
-        log.warning("DoH ile cozumlenemedi: %s", name)
+        log.warning("DoH ile çözümlenemedi: %s", name)
         return []

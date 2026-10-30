@@ -41,7 +41,7 @@ def strategy_works(engine, strategy):
 def find_strategy(engine, preferred=None, on_try=None, cancel=None):
     """Once kayitli stratejiyi, sonra listeyi sirayla dener. Calisan ilk strateji ya da None."""
     if not tls_check(engine.resolver, CONTROL_HOST):
-        raise ConnectionError("Internet baglantisi yok gibi gorunuyor (kontrol sitesine erisilemedi).")
+        raise ConnectionError("İnternet bağlantısı yok gibi görünüyor (kontrol sitesine erişilemedi).")
     order = list(STRATEGIES)
     if preferred:
         order.sort(key=lambda s: s.name != preferred.name)

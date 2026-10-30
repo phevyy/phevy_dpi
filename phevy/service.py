@@ -134,7 +134,7 @@ class Service:
 
     def _do_set_strategy(self, name):
         if name != AUTO and name not in BY_NAME:
-            raise ValueError(f"Bilinmeyen yontem: {name}")
+            raise ValueError(f"Bilinmeyen yöntem: {name}")
         self.cfg["mode"] = name
         config.save_config(self.cfg)
         if self.engine is not None:
@@ -145,7 +145,7 @@ class Service:
         mode = self.cfg.get("mode", AUTO)
         if mode != AUTO and mode in BY_NAME:
             self.engine.set_strategy(BY_NAME[mode])
-            log.info("Elle secilen yontem: %s", mode)
+            log.info("Elle seçilen yöntem: %s", mode)
             self._set_state("connected")
             return
         self._set_state("scanning")
@@ -154,13 +154,13 @@ class Service:
         if st is None:
             st = BY_NAME[FALLBACK_STRATEGY]
             self.engine.set_strategy(st)
-            log.warning("Hicbir yontem testten gecemedi, varsayilan %s kullaniliyor", st.name)
-            self._set_state("connected", "Hicbir yontem testten gecemedi, varsayilan kullaniliyor",
+            log.warning("Hiçbir yöntem testten geçemedi, varsayılan %s kullanılıyor", st.name)
+            self._set_state("connected", "Hiçbir yöntem testten geçemedi, varsayılan kullanılıyor",
                             "no_strategy_found")
             return
         self.cfg["strategy"] = st.name
         config.save_config(self.cfg)
-        log.info("Calisan yontem bulundu: %s (%s)", st.name, st.desc)
+        log.info("Çalışan yöntem bulundu: %s (%s)", st.name, st.desc)
         self._set_state("connected")
 
     def _on_try(self, st):
@@ -184,7 +184,7 @@ class Service:
                 fails = 0
                 continue
             fails += 1
-            log.warning("Discord'a erisim kontrolu basarisiz (%d/2)", fails)
+            log.warning("Discord'a erişim kontrolü başarısız (%d/2)", fails)
             if fails >= 2:
                 fails = 0
                 self.submit("rescan")
