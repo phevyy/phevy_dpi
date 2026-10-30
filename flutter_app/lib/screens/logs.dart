@@ -140,9 +140,14 @@ class _LogsScreenState extends State<LogsScreen> {
                   const SizedBox(width: 6),
                   Expanded(child: Text('phevy_engine / log.txt', style: T.monoXs.copyWith(color: C.onVariant))),
                   if (e.logFile != null)
-                    InkWell(
+                    Hover(
                       onTap: () => Process.run('explorer.exe', ['/select,', e.logFile!]),
-                      child: Text('Dosyayı göster', style: T.monoXs.copyWith(color: C.secondary)),
+                      builder: (h, _) => Text('Dosyayı göster',
+                          style: T.monoXs.copyWith(
+                            color: h ? C.onSurface : C.secondary,
+                            decoration: h ? TextDecoration.underline : null,
+                            decorationColor: C.onSurface,
+                          )),
                     ),
                 ]),
               ),
@@ -236,15 +241,17 @@ class _Segmented extends StatelessWidget {
         decoration: BoxDecoration(color: C.lowest, borderRadius: BorderRadius.circular(8)),
         child: Row(mainAxisSize: MainAxisSize.min, children: [
           for (var i = 0; i < labels.length; i++)
-            GestureDetector(
+            Hover(
               onTap: () => onChanged(i),
-              child: Container(
+              builder: (h, _) => AnimatedContainer(
+                duration: hoverDuration,
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                 decoration: BoxDecoration(
-                  color: i == index ? C.primary : Colors.transparent,
+                  color: i == index ? C.primary : (h ? C.high : Colors.transparent),
                   borderRadius: BorderRadius.circular(6),
                 ),
-                child: Text(labels[i], style: T.labelSm.copyWith(color: i == index ? C.onPrimary : C.onVariant)),
+                child: Text(labels[i],
+                    style: T.labelSm.copyWith(color: i == index ? C.onPrimary : (h ? C.onSurface : C.onVariant))),
               ),
             ),
         ]),
@@ -259,12 +266,16 @@ class _ToggleChip extends StatelessWidget {
   const _ToggleChip({required this.icon, required this.label, required this.value, required this.onChanged});
 
   @override
-  Widget build(BuildContext context) => InkWell(
-        borderRadius: BorderRadius.circular(6),
+  Widget build(BuildContext context) => Hover(
         onTap: () => onChanged(!value),
-        child: Container(
+        builder: (h, _) => AnimatedContainer(
+          duration: hoverDuration,
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-          decoration: BoxDecoration(color: value ? C.high : C.lowest, borderRadius: BorderRadius.circular(6)),
+          decoration: BoxDecoration(
+            color: hoverColor(value ? C.high : C.lowest, h),
+            borderRadius: BorderRadius.circular(6),
+            border: Border.all(color: (value ? C.primary : C.muted).withValues(alpha: h ? 0.5 : 0)),
+          ),
           child: Row(mainAxisSize: MainAxisSize.min, children: [
             Icon(icon, size: 13, color: value ? C.primary : C.muted),
             const SizedBox(width: 4),

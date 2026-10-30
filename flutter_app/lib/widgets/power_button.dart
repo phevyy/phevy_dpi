@@ -19,6 +19,7 @@ class PowerButton extends StatefulWidget {
 class _PowerButtonState extends State<PowerButton> with SingleTickerProviderStateMixin {
   late final AnimationController _anim = AnimationController(vsync: this, duration: const Duration(seconds: 2))..repeat();
   bool _pressed = false;
+  bool _hover = false;
 
   @override
   void dispose() {
@@ -73,9 +74,11 @@ class _PowerButtonState extends State<PowerButton> with SingleTickerProviderStat
               onTap: widget.onTap,
               child: MouseRegion(
                 cursor: SystemMouseCursors.click,
+                onEnter: (_) => setState(() => _hover = true),
+                onExit: (_) => setState(() => _hover = false),
                 child: AnimatedScale(
-                  scale: _pressed ? 0.95 : 1,
-                  duration: const Duration(milliseconds: 100),
+                  scale: _pressed ? 0.95 : (_hover ? 1.04 : 1),
+                  duration: const Duration(milliseconds: 140),
                   child: Container(
                     width: 148,
                     height: 148,
@@ -88,7 +91,10 @@ class _PowerButtonState extends State<PowerButton> with SingleTickerProviderStat
                             ? const [Color(0xFF8A0F18), Color(0xFF3A0A10), C.lowest]
                             : [Color.alphaBlend(accent.withValues(alpha: s == EngineState.stopped ? 0.05 : 0.18), C.high), C.container, C.lowest],
                       ),
-                      boxShadow: const [BoxShadow(color: Color(0x80000000), blurRadius: 24, offset: Offset(0, 8))],
+                      boxShadow: [
+                        const BoxShadow(color: Color(0x80000000), blurRadius: 24, offset: Offset(0, 8)),
+                        if (_hover) BoxShadow(color: accent.withValues(alpha: 0.35), blurRadius: 28),
+                      ],
                     ),
                     child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
                       Container(

@@ -295,9 +295,18 @@ class _StrategyPicker extends StatelessWidget {
         const PopupMenuDivider(),
         for (final s in e.strategies) _item(s.name, s.name, s.desc, current),
       ],
-      child: Container(
+      // PopupMenuButton tiklamayi kendisi yonetir; Hover sadece imlec ve gorunum icin.
+      child: Hover(
+        onTap: null,
+        passthrough: true,
+        builder: (h, _) => AnimatedContainer(
+        duration: hoverDuration,
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-        decoration: BoxDecoration(color: C.high, borderRadius: BorderRadius.circular(10)),
+        decoration: BoxDecoration(
+          color: hoverColor(C.high, h),
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: C.primary.withValues(alpha: h ? 0.45 : 0)),
+        ),
         child: Row(children: [
           Icon(current == 'auto' ? Icons.auto_awesome : Icons.call_split, size: 18, color: C.primary),
           const SizedBox(width: 8),
@@ -314,6 +323,7 @@ class _StrategyPicker extends StatelessWidget {
           const SizedBox(width: 6),
           const Icon(Icons.expand_more, color: C.onVariant),
         ]),
+        ),
       ),
     );
   }
@@ -350,7 +360,16 @@ class _DomainChip extends StatelessWidget {
           Text(domain, style: T.monoXs.copyWith(color: C.onSurface)),
           if (onRemove != null) ...[
             const SizedBox(width: 4),
-            InkWell(onTap: onRemove, child: const Icon(Icons.close, size: 13, color: C.muted)),
+            Hover(
+              onTap: onRemove,
+              tooltip: 'Kaldır',
+              builder: (h, _) => AnimatedContainer(
+                duration: hoverDuration,
+                padding: const EdgeInsets.all(2),
+                decoration: BoxDecoration(color: h ? C.errorContainer : Colors.transparent, shape: BoxShape.circle),
+                child: Icon(Icons.close, size: 12, color: h ? Colors.white : C.muted),
+              ),
+            ),
           ],
         ]),
       );
