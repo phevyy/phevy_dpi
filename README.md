@@ -42,6 +42,10 @@ GoodbyeDPI, zapret veya başka bir WinDivert aracı aynı anda açık olmamalıd
 2. `pip install pyinstaller`
 3. `build.bat` → `dist\phevy_dpi.exe` (konsol) ve `dist\phevy_engine.exe` (uygulamanın başlattığı penceresiz motor)
 
+Tam sürüm (motor + uygulama + kurulum dosyası): `release.bat` → `dist\installer\phevy_kurulum_X.exe`.
+Inno Setup 6 gerekir. Sürüm numarası `installer\phevy.iss`, `flutter_app\pubspec.yaml`,
+`flutter_app\lib\app.dart` ve `phevy_dpi.py` dosyalarında birlikte güncellenmelidir.
+
 Uygulama ile motor arasındaki protokol: [docs/IPC.md](docs/IPC.md).
 Protokol testi (yönetici izniyle): `python tools\ipc_client.py dist\phevy_engine.exe --debug`
 

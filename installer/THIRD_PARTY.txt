@@ -1,0 +1,21 @@
+phevy aşağıdaki üçüncü taraf bileşenleri değiştirilmeden içerir.
+
+WinDivert 2.2.2-A (engine\_internal\WinDivert.dll, WinDivert64.sys)
+  Telif: basil00 ve katkıda bulunanlar
+  Lisans: GNU LGPL v3 veya GNU GPL v2 (çift lisans)
+  Kaynak: https://github.com/basil00/WinDivert
+
+Inter yazı tipi
+  Lisans: SIL Open Font License 1.1
+  Kaynak: https://github.com/rsms/inter
+
+JetBrains Mono yazı tipi
+  Lisans: SIL Open Font License 1.1
+  Kaynak: https://github.com/JetBrains/JetBrainsMono
+
+Flutter ve Dart paketleri (window_manager, tray_manager, shared_preferences, url_launcher, file_selector)
+  Lisans: BSD-3-Clause / MIT
+  Kaynak: https://pub.dev
+
+Python ve PyInstaller çalışma zamanı (engine\_internal)
+  Lisans: PSF License / GPL (bootloader istisnalı)
